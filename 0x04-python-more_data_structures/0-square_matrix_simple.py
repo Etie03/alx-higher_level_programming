@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix):
-    soln = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))]
-    for m in range(len(matrix)):
-        for p in range(len(matrix[0])):
-            soln[m][p] = matrix[m][p] ** 2
+      new_matrix = [x[:] for x in matrix]
+      for m in range(len(new_matrix)):
+          for p in range(len(new_matrix[m])):
+              new_matrix[m][p] = (new_matrix[m][p]) ** 2
 
-    return soln
+
+      return new_matrix
