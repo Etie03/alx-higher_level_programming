@@ -4,5 +4,4 @@ def complex_delete(my_dict, value):
     for m, p in tmp.items():
         if value == p:
             my_dict.pop(m)
-    return my_dict
-
+            return my_dict
