@@ -83,7 +83,7 @@ void print_python_bytes(PyObject *p)
 	printf("  size: %d\n", clone_size);
 	printf("  trying string: %s\n", clone->ob_sval);
 	printf("  first %d bytes: ", calc_bytes);
-	print_hexn(clone->ob_sval, calc_bytes);
+	print_hex(clone->ob_sval, calc_bytes);
 	printf("\n");
 
 	fflush(stdout);
