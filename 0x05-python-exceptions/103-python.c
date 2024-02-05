@@ -8,6 +8,22 @@ void print_python_float(PyObject *p);
 void print_hex(const char *stg, int n);
 
 /**
+ * print_hex - prints hexadecimal
+ * @stg: the string
+ * @n: the integer
+ */
+void print_hex(const char *stg, int n)
+{
+        int m = 0;
+
+        for (; m < n - 1; ++m)
+                printf("%02x ", (unsigned char) stg[m]);
+
+        printf("%02x", stg[m]);
+        fflush(stdout);
+}
+
+/**
  * print_python_list - Prints basic info about Python lists.
  * @p: A PyObject
  */
@@ -96,21 +112,5 @@ void print_python_float(PyObject *p)
 	else
 		printf("  value: %0.16g\n", clone->ob_fval);
 
-	fflush(stdout);
-}
-
-/**
- * print_hex - prints hexadecimal
- * @stg: the string
- * @n: the integer
- */
-void print_hex(const char *stg, int n)
-{
-	int m = 0;
-
-	for (; m < n - 1; ++m)
-		printf("%02x ", (unsigned char) stg[m]);
-
-	printf("%02x", stg[m]);
 	fflush(stdout);
 }
