@@ -5,6 +5,8 @@ Define a Class Square with:
 - method of area and method of print_square
 - getters & setters.
 """
+
+
 class Square:
     """The Class Square"""
 
