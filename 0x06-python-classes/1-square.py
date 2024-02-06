@@ -3,15 +3,8 @@
 
 
 class Square:
+    """Class to create a square with its size"""
 
-    def __init__(self, size):
-        """__init__
-
-        The __init__ method initializes the size value
-        of the square.
-
-        Attributes:
-            size (int): The size of the square.
-
-        """
-        self.__size = size
+    def __init__(self, square_size):
+        """Constructor of the Square"""
+        self.__size = square_size
