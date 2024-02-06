@@ -1,37 +1,58 @@
-#!/usr/bin/python3
 """Create a Class Square with size, method of area and getters & setters"""
 
 
 class Square:
-    """class Square that defines a square
-    Attributes:
-        size: Private instance attribute size
-        area: area of the square
-    """
+    """Class - Square"""
 
     def __init__(self, size=0):
-        """Initializer with default size = 0"""
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = size
+        """Constructor of a Square with the size"""
+        if (type(size) is not int):
+            raise (TypeError("size must be an integer"))
+        elif (size < 0):
+            raise (ValueError("size must be >= 0"))
+        else:
+            self.__size = size
+
+    def __lt__(self, other):
+        """Compare operator <"""
+        return (self.area() < other.area())
+
+    def __le__(self, other):
+        """Compare operator <="""
+        return (self.area() <= other.area())
+
+    def __gt__(self, other):
+        """Compare operator >"""
+        return (self.area() > other.area())
+
+    def __ge__(self, other):
+        """Compare operator >="""
+        return (self.area() >= other.area())
+
+    def __eq__(self, other):
+        """Compare operator =="""
+        return (self.area() == other.area())
+
+    def __ne__(self, other):
+        """Compare operator !="""
+        return (self.area() != other.area())
 
     def area(self):
-        """Public instance method that returns the current square area"""
-        area = self.__size * self.__size
-        return(area)
+        """Method to get the area of the Square"""
+        return (self.__size ** 2)
 
     @property
     def size(self):
-        """property to retrieve it"""
-        return self.__size
+        """Getter of the private attribute size"""
+        return (self.__size)
 
     @size.setter
     def size(self, value):
-        """property setter to set it"""
-        if type(value) is not int:
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
+        """Setter for the size private attribute"""
+        if ((type(value) is int) or (type(value) is float)):
+            if (value < 0):
+                raise (ValueError("size must be >= 0"))
+            else:
+                self.__size = value
+        else:
+            raise (TypeError("size must be a number"))
