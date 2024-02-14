@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+
 A class Rectangle that defines a rectangle
 """
 
@@ -8,7 +9,6 @@ class Rectangle():
     """
     An empty Rectangle Class
     """
-
 
     number_of_instances = 0
     print_symbol = '#'
