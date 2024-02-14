@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This program module contains an algorithm 
+This program module contains an algorithm
 that resolves the N-Queen puzzle using backtracking
 """
 
