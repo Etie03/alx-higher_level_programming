@@ -3,10 +3,12 @@
 
 
 class MyInt(int):
-    def __eq__(self, other):
-        '''Override equals, inverting it.'''
-        return int(self) != int(other)
+    """Class MyInt is like an int but Rebel"""
 
-    def __ne__(self, other):
-        '''Override not-equals, inverting it.'''
-        return int(self) == int(other)
+    def __eq__(self, other_num):
+        """Rebel!!! equal is not equal"""
+        return super().__ne__(other_num)
+
+    def __ne__(self, other_num):
+        """Rebel!!! not equal is equal"""
+        return super().__eq__(other_num)
