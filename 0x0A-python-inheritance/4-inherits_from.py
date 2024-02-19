@@ -5,8 +5,5 @@ Validate if a class inherits from a_class
 
 
 def inherits_from(obj, a_class):
-    if isinstance(obj, a_class) and \
-       issubclass(a_class, obj.__class__) is False:
-        return True
-
-    return False
+    '''Determines if an object is a true subclass of a class.'''
+    return isinstance(obj, a_class) and type(obj) != a_class
