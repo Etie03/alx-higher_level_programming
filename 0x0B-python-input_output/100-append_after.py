@@ -4,16 +4,14 @@
 
 def append_after(filename="", search_string="", new_string=""):
     '''Method for inserting text after search string.'''
-     with open(filename, mode='r', encoding='utf-8') as f:
-        text = f.readlines()
-        new_text = []
-
-        for line in text:
-            new_text.append(line)
-
-            if search_string in line:
-                new_text.append(new_string)
-
-    with open(filename, mode='w', encoding='utf-8') as nf:
-        for line in new_text:
-            nf.write(line)
+    lines = []
+    with open(filename, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+        i = 0
+        while i < len(lines):
+            if search_string in lines[i]:
+                lines[i:i + 1] = [lines[i], new_string]
+                i += 1
+            i += 1
+    with open(filename, "w", encoding="utf-8") as f:
+        f.writelines(lines)
