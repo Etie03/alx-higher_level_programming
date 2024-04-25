@@ -7,4 +7,4 @@ if (process.argv.length < 3) {
 } else {
   m = 'Arguments found';
 }
-console.log(m)
+console.log(m);
